@@ -18,6 +18,10 @@ const io = new Server(server, {
 let onlineUsers = new Map();
 let roomUsers = {};
 
+app.get("/", (req, res) => {
+  res.json({ message: "Server is running." });
+});
+
 io.on("connection", (socket) => {
   console.log("User connected:", socket.id);
 
